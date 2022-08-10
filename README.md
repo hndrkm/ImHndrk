@@ -1,2 +1,3 @@
-# blog
-blog de hendrik
+# my page
+
+hendrik michael ramos suarez
