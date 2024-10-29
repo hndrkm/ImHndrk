@@ -2,11 +2,11 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import Splitting from "splitting";
 import { useRef, useEffect, useState } from "react";
-import { myRandomNumber, getRandomChar } from "../lib/utils";
+import { getRandomChar } from "../lib/utils";
 
-function TextLabel({ children }) {
+function TextLabel({ children ,colorF='#c7dbff' }) {
     const [hasRendered, setHasRendered] = useState(false);
-    const [chars, setChar] = useState([]);
+    const [chars, setChars] = useState([]);
 
     const [duration, setDuration] = useState(1000);
     const elapsedRef = useRef(0);
@@ -20,7 +20,7 @@ function TextLabel({ children }) {
 
 
     function setAnim() {
-        if (!isAnimating) {
+        if (!isAnimating && !(chars.length<=0)) {
             setIsAnimating(true);
             elapsedRef.current = 0;
             previousTimeRef.current = null;
@@ -39,11 +39,10 @@ function TextLabel({ children }) {
 
         const timeSinceLastUpdate = currentTime - lastUpdateRef.current;
 
-        const updateInterval = 100; 
+        const updateInterval = 100;
 
         if (timeSinceLastUpdate >= updateInterval) {
             lastUpdateRef.current = currentTime;
-            //console.log(timeSinceLastUpdate)
             for (const c of chars) {
                 //c[1].style.opacity = elapsedRef.current / duration
                 c[1].style.color = ['#18868c', '#18718c', '#18528c'][Math.floor(Math.random() * 3)]
@@ -58,7 +57,7 @@ function TextLabel({ children }) {
         else {
             for (const c of chars) {
                 //c[1].style.opacity = 1
-                c[1].style.color = ['#ffffff','#ffffff','#ffffff'][1]
+                c[1].style.color = ['#ffffff', colorF, '#ffffff'][1]
                 c[1].innerHTML = c[2];
             }
             setIsAnimating(false);
@@ -81,12 +80,16 @@ function TextLabel({ children }) {
                     }
                 }
             }
+            setChars(charElements);            
             setHasRendered(true);
-            setChar(charElements);
+            
         }
+
         return () => {
+            
         };
     }, [hasRendered]);
+    useEffect(()=>{setAnim()},[chars]);
     return (
         <div
             onMouseEnter={() => setAnim()}
