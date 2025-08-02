@@ -19,4 +19,4 @@ github branches
 local branches 
 - main develop 
 - origin (master)
-
+ppnpm run deploy 

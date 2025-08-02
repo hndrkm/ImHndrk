@@ -14,6 +14,7 @@ function ProjectCard({ title, subtitle, embedId, description, tags = [] }) {
             </div>
 
             <div className="">
+                <img src="/ImHndrk/Coltis.png" alt="" className="w-full max-h-80 object-cover"/>
                 <iframe
                     className="w-full min-h-80"
                     src={`https://www.youtube.com/embed/${embedId}`}

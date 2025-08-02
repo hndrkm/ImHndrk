@@ -2,7 +2,7 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import Splitting from "splitting";
 import { useRef, useEffect, useState } from "react";
-import { getRandomChar } from "../lib/utils";
+import { getRandomChar } from "../../lib/utils";
 
 function TextLabel({ children ,colorF='#c7dbff' }) {
     const [hasRendered, setHasRendered] = useState(false);

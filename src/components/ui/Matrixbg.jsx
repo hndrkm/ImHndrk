@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useEffect } from "react";
 import { useRef, useState } from "react"
-import { myRandomNumber } from "../lib/utils";
+import { myRandomNumber } from "../../lib/utils";
 
 const themeColor = "#18868c"; // Color del texto
 const backgroundColor = "#000000"; // Color de fondo
@@ -20,7 +20,7 @@ function Matrixbg() {
 
         const { parentElement } = canvas;
         canvas.width = parentElement?.offsetWidth || window.innerWidth;
-        canvas.height = parentElement?.offsetHeight || window.innerHeight;
+        canvas.height =  window.innerHeight;
 
         const context = canvas.getContext("2d");
         if (context) {
@@ -82,7 +82,7 @@ function Matrixbg() {
     return (
         <canvas
             ref={canvasRef}
-            className="absolute h-full w-full -z-10 opacity-75 ">
+            className="h-screen w-full -z-10 opacity-75 fixed">
         </canvas>
     )
 }

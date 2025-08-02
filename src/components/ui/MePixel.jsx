@@ -1,4 +1,4 @@
-import myI from '../assets/mepixel.svg';
+import myI from '../../assets/mepixel.svg';
 function MePixel(){
     return (
         <div>
