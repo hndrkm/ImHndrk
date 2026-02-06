@@ -7,7 +7,7 @@ const themeColor = "#18868c"; // Color del texto
 const backgroundColor = "#000000"; // Color de fondo
 const semiTransparentBackground = `${backgroundColor}20`; // Fondo semitransparente
 const font = "15pt monospace"; // Fuente del texto
-const charSpacing = 15; // Espaciado entre caracteres en píxeles
+const charSpacing = 10; // Espaciado entre caracteres en píxeles
 const frameRate = 10; // Velocidad de actualización
 
 function Matrixbg() {
@@ -52,7 +52,7 @@ function Matrixbg() {
             const x = index * charSpacing;
 
             context.fillText(char, x, y);
-            return y > 150 + Math.random() * 10000 ? 0 : y + 70;
+            return y > 150 + Math.random() * 10000 ? 0 : y + 20;
         });
     }, []);
 

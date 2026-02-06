@@ -72,7 +72,7 @@ function EmoteAnim() {
     }, [hasRendered]);
     useEffect(() => { }, [emote]);
     return (
-        <div className="pt-10 text-center" ref={txtelm}>
+        <div className="pt-10 text-center font-extrabold" ref={txtelm}>
             <span className="text-4xl">{emote}</span>
         </div>
     );

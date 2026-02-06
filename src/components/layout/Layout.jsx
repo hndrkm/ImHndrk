@@ -5,11 +5,16 @@ export default function Layout() {
 
         <div className="">
             <div className="flex justify-around">
-                <div className="p-2 text-zinc-300 text-2xl font-extrabold">
-                    HNDRK (-_-)\
+                <div className="p-2 text-zinc-300 text-2xl font-bold">
+                    <NavLink to="/" className={({ isActive }) =>
+                        isActive
+                            ? 'text-cyan-600 font-bold p-1  hover:text-cyan-500'
+                            : 'text-white p-1  hover:text-cyan-500'
+                    }>HNDRK (-_-)  </NavLink>
+                    
                 </div>
                 <nav className="flex p-1 text-white text-2xl font-extrabold">
-                    <NavLink to="/" className={({ isActive }) =>
+                    <NavLink to="/projects" className={({ isActive }) =>
                         isActive
                             ? 'text-cyan-600 font-bold p-1  hover:text-cyan-500'
                             : 'text-white p-1  hover:text-cyan-500'
@@ -32,7 +37,7 @@ export default function Layout() {
                 <Matrixbg />
                 <Outlet />
             </main>
-            <footer><div className="flex justify-center text-zinc-200"> ©hEndrIk</div></footer>
+            <footer className='bg-black'><div className="flex justify-center text-zinc-200"> ©hEndrIk</div></footer>
         </div>
 
     );

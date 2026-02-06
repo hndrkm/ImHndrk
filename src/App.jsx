@@ -4,13 +4,15 @@ import Layout from './components/layout/Layout';
 import ProjectsPage from "./pages/Projects";
 import AboutPage from "./pages/About";
 import BlogPage from "./pages/Blog";
+import HomePage from './pages/Home';
 const router = createBrowserRouter(
   [
     {
       path: '/',
       element: <Layout />,
       children: [
-        { index: true, element: <ProjectsPage /> },
+        { index: true, element: <HomePage/> },
+        { path: '/projects', element: <ProjectsPage /> },
         { path: '/about', element: <AboutPage /> },
         { path: '/blog', element: <BlogPage /> }
       ],

@@ -9,24 +9,6 @@ export default function ProjectsPage() {
     <div>
 
       <div className="flex flex-col w-full h-full  text-zinc-200">
-        <div className="flex justify-around h-screen  ">
-          <div className="p-2  max-w-prose flex flex-col justify-center">
-            <div className="text-6xl font-bold p-2">
-              <TextLabel colorF="#FFFFFF">
-                HENDRIK RAMOS
-              </TextLabel>
-            </div>
-            <div className="text-xl font-semibold p-2">
-              <TextLabel colorF="#FFFFFF">Creative web and game developer.</TextLabel>
-
-            </div>
-            <div className="text-xl font-semibold p-2">
-              <TextLabel colorF="#FFFFFF">¡Hola! Me gusta hacer cosas divertidas e interactivas con código.</TextLabel>
-            </div>
-            <EmoteAnim></EmoteAnim>
-          </div>
-        </div>
-
         <div>
           <SectionProjects sectiontitle={"Recent Projects"}>
             <ProjectCard
@@ -35,7 +17,6 @@ export default function ProjectsPage() {
               subtitle={"Rhythm game"}
               description={"Videojuego 2D de ritmo, visuales sincronizadas con el ritmo de la musica, con personalizacion de entornos y personajes de acuerdo a la letra de musica independiente local."}
               tags={["Solo", "Desarrollador", "Shaders"]} />
-
           </SectionProjects>
 
           <SectionProjects sectiontitle={"Games"}>
